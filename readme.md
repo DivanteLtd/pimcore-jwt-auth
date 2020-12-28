@@ -46,14 +46,14 @@ Generate the SSH keys :
 ``` bash
 $ mkdir app/config/jwt
 $ openssl genrsa -out app/config/jwt/private.pem -aes256 4096
-$ openssl rsa -pubout -in app/config/jwt/private.pem -out config/jwt/public.pem
+$ openssl rsa -pubout -in app/config/jwt/private.pem -out app/config/jwt/public.pem
 ```
 
 In case first ```openssl``` command forces you to input password use following to get the private key decrypted
 ``` bash
-$ openssl rsa -in app/config/jwt/private.pem -out config/jwt/private2.pem
-$ mv app/config/jwt/private.pem config/jwt/private.pem-back
-$ mv app/config/jwt/private2.pem config/jwt/private.pem
+$ openssl rsa -in app/config/jwt/private.pem -out app/config/jwt/private2.pem
+$ mv app/config/jwt/private.pem app/config/jwt/private.pem-back
+$ mv app/config/jwt/private2.pem app/config/jwt/private.pem
 ```
 
 ## Configuration
